@@ -31,7 +31,7 @@ class Tiles extends Component {
 
 function mapStateToPorps(state) {
     return {
-        tiles: state
+        tiles: state.present
     };
 }
 export default connect(mapStateToPorps)(Tiles)
