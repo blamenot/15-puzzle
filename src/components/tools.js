@@ -5,9 +5,9 @@ class Tools extends Component {
     render() {
         return (
             <div className='tool-box'>
-                <button disabled={!this.props.hasPast} onClick={this.props.onUndo}>Undo</button>&nbsp;
-                <button disabled={!this.props.hasFuture} onClick={this.props.onRedo}>Redo</button>&nbsp;
-                <button onClick={this.props.onReset}>Reset</button>&nbsp;
+                <button className="tool" disabled={!this.props.hasPast} onClick={this.props.onUndo}>☜</button>
+                <button className="tool" disabled={!this.props.hasFuture} onClick={this.props.onRedo}>☞</button>
+                <button className="tool" onClick={this.props.onReset}>&#x21bb;</button>
             </div>
         )
     }

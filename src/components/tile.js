@@ -13,7 +13,8 @@ class Tile extends Component{
     getStyle() {
         return {
             left: (this.props.index % 4 * 25) + '%',
-            top: (Math.trunc(this.props.index/4) * 25) + '%'
+            top: (Math.trunc(this.props.index/4) * 25) + '%',
+            cursor: this.props.clickable ? 'pointer' : 'default'
         }
     }
     /**

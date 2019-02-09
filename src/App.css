@@ -12,10 +12,34 @@ body {
       }
 }
 .tool-box {
-    background-color: white;
+    margin-top: 20px;
+    width: 100vw;
+    max-width: 400px;
+    margin: 0 auto;
     color: black;
+    text-align: center;
+    display: flex;
+}
+.tool {
+    margin: 0 1%; 
+    max-width: 92px;
+    max-height: 92px;
+    width: 23vw;
+    height: 23vw;
+    font-size: 65px;
+    color: #282c34;
+    border: none;
+    background-color: white;
+    border-radius: 20px;
+}
+@media (max-width: 320px) {
+    .tool {
+        font-size: 35px;
+        border-radius: 10px;
+    }   
 }
 .tiles {
+    text-shadow: 0px 0px 10px #666;
     width: 100vw;
     height: 100vw;
     max-width: 400px;
@@ -24,14 +48,24 @@ body {
     margin: 0 auto;
 }
 .tile {
+    background-color: #47525c
+    ;
+    margin: 1%;
+    box-sizing: border-box;
     position: absolute;
     border: 1px solid white;
     display: flex;
-    height: 25%;
-    width: 25%;
-    transition-property: top,left;
-    transition-timing-function: ease-in;
-    transition-duration: .1;
+    height: 23%;
+    width: 23%;
+    border-radius: 20px;
+}
+.clickable {
+    cursor: pointer;
+}
+@media (max-width: 320px) {
+    .tile {
+        border-radius: 10px;
+    }
 }
 .tile > *{
     margin: auto

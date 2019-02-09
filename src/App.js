@@ -11,8 +11,8 @@ class App extends Component {
         const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
         return (
             <Provider store={store}>
-                <Tools />
                 <Tiles />
+                <Tools />
             </Provider>
         );
     }
