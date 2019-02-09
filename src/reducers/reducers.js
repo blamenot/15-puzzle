@@ -11,9 +11,24 @@ import {
  * @returns {Object} default state
  */
 function getDefaultState() {
+    let sequnceSum, tilesState
+    do {
+        tilesState = _.shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15])
+        sequnceSum = 0
+        //check Solvability http://pyatnashki.wmsite.ru/kombinacyi
+        for(let i = 0; i < tilesState.length - 1; i++) {
+            if(tilesState[i] === 0) {
+                sequnceSum += Math.trunc(i/4) + 1
+                continue;
+            }
+            for(let k = i + 1; k < tilesState.length; k++) {
+                tilesState[i] > tilesState[k] && tilesState[k] !== 0 && sequnceSum++
+            }
+        }
+    } while (sequnceSum % 2 !== 0)
     return {
         past:[],
-        present: _.shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]),
+        present: tilesState,
         future: []
     }
 }
@@ -84,7 +99,6 @@ export default function reducer (state = getState(), action) {
             //clear current state
             let state = getDefaultState()
             //save new cleared state
-            console.dir(state)
             saveState(state)
             return state
         }

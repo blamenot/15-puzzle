@@ -16,25 +16,36 @@ body {
     width: 100vw;
     max-width: 400px;
     margin: 0 auto;
-    color: black;
-    text-align: center;
-    display: flex;
 }
 .tool {
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    display: inline-block;
     margin: 0 1%; 
     max-width: 92px;
     max-height: 92px;
-    width: 23vw;
+    width: 23%;
     height: 23vw;
-    font-size: 65px;
+    font-size: 33px;
     color: #282c34;
-    border: none;
     background-color: white;
     border-radius: 20px;
 }
+.tool:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+.tool:active {
+    transform: scale(0.99);
+}
+.tool:disabled {
+    color: lightgrey;
+}
 @media (max-width: 320px) {
     .tool {
-        font-size: 35px;
+        font-size: 23px;
         border-radius: 10px;
     }   
 }
